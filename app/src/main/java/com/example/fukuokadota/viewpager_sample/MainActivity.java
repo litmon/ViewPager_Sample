@@ -1,17 +1,39 @@
 package com.example.fukuokadota.viewpager_sample;
 
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.viewpagerindicator.PageIndicator;
+
 
 public class MainActivity extends ActionBarActivity {
+
+    ViewPager pager;
+    CustomPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        pager = (ViewPager) findViewById(R.id.view2);
+        PageIndicator indicator = (PageIndicator) findViewById(R.id.view);
+
+
+        adapter = new CustomPagerAdapter(this);
+
+        adapter.add(R.drawable.c1);
+        adapter.add(R.drawable.c2);
+        adapter.add(R.drawable.c3);
+        adapter.add(R.drawable.c4);
+        adapter.add(R.drawable.c5);
+
+        pager.setAdapter(adapter);
+        indicator.setViewPager(pager);
+
     }
 
 

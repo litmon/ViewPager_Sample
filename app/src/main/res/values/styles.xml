@@ -5,4 +5,12 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="CustomCirclePageIndicator">
+        <item name="fillColor">#ffaaaa</item>
+        <item name="centered">true</item>
+        <item name="pageColor">#aaaaaa</item>
+        <item name="strokeColor">#ffffff</item>
+        <item name="radius">6dp</item>
+    </style>
+
 </resources>
