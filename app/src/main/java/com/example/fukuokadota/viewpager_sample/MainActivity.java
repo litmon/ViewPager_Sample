@@ -20,11 +20,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         pager = (ViewPager) findViewById(R.id.view2);
-        PageIndicator indicator = (PageIndicator) findViewById(R.id.view);
-
 
         adapter = new CustomPagerAdapter(this);
-
         adapter.add(R.drawable.c1);
         adapter.add(R.drawable.c2);
         adapter.add(R.drawable.c3);
@@ -32,8 +29,9 @@ public class MainActivity extends ActionBarActivity {
         adapter.add(R.drawable.c5);
 
         pager.setAdapter(adapter);
-        indicator.setViewPager(pager);
 
+        PageIndicator indicator = (PageIndicator) findViewById(R.id.view);
+        indicator.setViewPager(pager);
     }
 
 
