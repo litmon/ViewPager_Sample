@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.viewpagerindicator.PageIndicator;
 
@@ -32,6 +33,19 @@ public class MainActivity extends ActionBarActivity {
 
         PageIndicator indicator = (PageIndicator) findViewById(R.id.view);
         indicator.setViewPager(pager);
+
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pager.setCurrentItem(pager.getCurrentItem() - 1);
+            }
+        });
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pager.setCurrentItem(pager.getCurrentItem() + 1);
+            }
+        });
     }
 
 
