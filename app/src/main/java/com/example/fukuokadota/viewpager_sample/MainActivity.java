@@ -23,6 +23,7 @@ public class MainActivity extends ActionBarActivity {
         pager = (ViewPager) findViewById(R.id.view2);
 
         adapter = new CustomPagerAdapter(this);
+
         adapter.add(R.drawable.c1);
         adapter.add(R.drawable.c2);
         adapter.add(R.drawable.c3);
@@ -46,6 +47,8 @@ public class MainActivity extends ActionBarActivity {
                 pager.setCurrentItem(pager.getCurrentItem() + 1);
             }
         });
+
+
     }
 
 
