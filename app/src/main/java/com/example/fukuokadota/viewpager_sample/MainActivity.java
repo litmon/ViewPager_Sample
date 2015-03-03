@@ -72,8 +72,7 @@ public class MainActivity extends ActionBarActivity {
 
         // listener追加する要素があったみたい
         indicator.setOnPageChangeListener(listener);
-        pager.setOnPageChangeListener(listener);
-
+        indicator.setViewPager(pager);
     }
 
 
