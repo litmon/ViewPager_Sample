@@ -68,11 +68,11 @@ public class MainActivity extends ActionBarActivity {
         };
 
         // => indicatorが無効になった(onPageChangeListenerが上書きされたせい)
-        pager.setOnPageChangeListener(listener);
+        // これがセットされてるとindicator.setOn~~を呼んでも反応しなくなるっぽい
+        // pager.setOnPageChangeListener(listener);
 
         // listener追加する要素があったみたい
         indicator.setOnPageChangeListener(listener);
-        indicator.setViewPager(pager);
     }
 
 
