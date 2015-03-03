@@ -3,6 +3,7 @@ package com.example.fukuokadota.viewpager_sample;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,6 +49,30 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+        // ViewPager.OnPageChangeListenerを入れるとindicatorがどうなるか検証
+        ViewPager.OnPageChangeListener listener = new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                Log.d("OnPageChangeListener", "onPageScrolled");
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Log.d("OnPageChangeListener", "onPageSelected");
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                Log.d("OnPageChangeListener", "onPageScrollStateChanged");
+            }
+        };
+
+        // => indicatorが無効になった(onPageChangeListenerが上書きされたせい)
+        pager.setOnPageChangeListener(listener);
+
+        // listener追加する要素があったみたい
+        indicator.setOnPageChangeListener(listener);
+        pager.setOnPageChangeListener(listener);
 
     }
 
