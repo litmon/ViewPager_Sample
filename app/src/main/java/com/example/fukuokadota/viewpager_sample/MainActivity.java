@@ -21,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        pager = (ViewPager) findViewById(R.id.view2);
+        pager = (ViewPager) findViewById(R.id.viewPager);
 
         adapter = new CustomPagerAdapter(this);
 
@@ -36,6 +36,7 @@ public class MainActivity extends ActionBarActivity {
         PageIndicator indicator = (PageIndicator) findViewById(R.id.view);
         indicator.setViewPager(pager);
 
+        // viewpagerのページ遷移をボタンで行えるようにする
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +72,7 @@ public class MainActivity extends ActionBarActivity {
         // これがセットされてるとindicator.setOn~~を呼んでも反応しなくなるっぽい
         // pager.setOnPageChangeListener(listener);
 
-        // listener追加する要素があったみたい
+        // listener追加する方法があったみたい
         indicator.setOnPageChangeListener(listener);
     }
 }
