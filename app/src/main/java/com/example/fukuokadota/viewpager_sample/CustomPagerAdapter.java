@@ -3,6 +3,7 @@ package com.example.fukuokadota.viewpager_sample;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -27,6 +28,13 @@ public class CustomPagerAdapter extends PagerAdapter{
         ImageView v = new ImageView(context);
 
         v.setImageResource(ids.get(position));
+
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("CustomPagerAdapter", "view onClicked.");
+            }
+        });
 
         container.addView(v);
 
